@@ -9,4 +9,6 @@ Deployed Link: [https://jessi-api-server.herokuapp.com/food](https://jessi-api-s
 
 Github Actions: [https://github.com/JessiVelazquez/api-server](https://github.com/JessiVelazquez/api-server)
 
-Pull Request: 
+Pull Request: [https://github.com/JessiVelazquez/api-server/pull/3](https://github.com/JessiVelazquez/api-server/pull/3)
+
+![UML](UML.png)
