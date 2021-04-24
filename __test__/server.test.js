@@ -4,9 +4,14 @@ const { server } = require('../src/server.js'); // bring in your server for test
 const supertest = require('supertest'); // pull in npm package of supertest for making requests and mocking a server env
 // const supergoose = require('@code-fellows/supergoose');
 // const mockRequestGoose = supergoose(server);
+
+const { food } = require('../routes/custom-routes-food.js');
+
 const mockRequest = supertest(server); // mock the server for us
 
-describe('API SERVER:', () => {
+
+describe('------SERVER TESTS---------', () => {
+
 
   it('should respond with a 404 on a bad route', async () => {
     return mockRequest.get('/where').then((data) => {
@@ -20,19 +25,20 @@ describe('API SERVER:', () => {
     });
   });
 
-  // it('should create a new item in the db', async () => {
-  //   const response = await mockRequest.post('/food').send({ name: 'burger', calories: '500', type: 'MEAT' })
-  //   expect(response.status).toBe(201);
-  //   expect(response.body.type).toEqual('MEAT');
-  //   console.log('post test', response.body._id);
-  // });
+  it('should create a new item in the db', async () => {
+    const response = await mockRequest.post('/food').send({ name: 'burger', calories: '500', type: 'MEAT' })
+    expect(response.status).toBe(201);
+    expect(response.body.type).toEqual('MEAT');
+    console.log('------POST TEST---------', respone.body);
+  });
+
 
   // it('should retrieve an item from the db', async () => {
-  //   const response = await mockRequest.get('/food/1');
+  //   const response = await mockRequest.get(`/food/${record.body._id}`);
   //   expect(response.status).toBe(200);
-  //   // expect(response.body).toBe(true);
-  //   console.log('get test', response.body);
+  //   expect(response.body).toBe(true);
   // });
+
 
   // it('should retrieve all items from the db', async () => {
   //   const response = await mockRequest.get('/food');
