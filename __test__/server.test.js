@@ -5,13 +5,14 @@ const supertest = require('supertest'); // pull in npm package of supertest for 
 // const supergoose = require('@code-fellows/supergoose');
 // const mockRequestGoose = supergoose(server);
 
-const { food } = require('../routes/custom-routes-food.js');
+// const { food } = require('../routes/custom-routes-food.js');
 
 const mockRequest = supertest(server); // mock the server for us
 
 
 describe('------SERVER TESTS---------', () => {
 
+  // var foodTest = { name: 'burger', calories: '500', type: 'MEAT' };
 
   it('should respond with a 404 on a bad route', async () => {
     return mockRequest.get('/where').then((data) => {
@@ -26,17 +27,29 @@ describe('------SERVER TESTS---------', () => {
   });
 
   it('should create a new item in the db', async () => {
-    const response = await mockRequest.post('/food').send({ name: 'burger', calories: '500', type: 'MEAT' })
+    const response = await mockRequest.post('/food').send({ name: 'burger', calories: '500', type: 'MEAT' });
     expect(response.status).toBe(201);
     expect(response.body.type).toEqual('MEAT');
-    console.log('------POST TEST---------', respone.body);
+    console.log('------POST TEST---------', response.body);
   });
 
 
-  // it('should retrieve an item from the db', async () => {
-  //   const response = await mockRequest.get(`/food/${record.body._id}`);
-  //   expect(response.status).toBe(200);
-  //   expect(response.body).toBe(true);
+  it('should retrieve an item from the db', async () => {
+    // let newFood = await mockRequest.post('/food').send({ name: 'burger2', calories: '500', type: 'MEAT' });
+    // let id = newFood.body;
+    const response = await mockRequest.get('/food/1');
+    expect(response.status).toBe(200);
+    expect(response.body.name).toEqual(newFood.body.name);
+    console.log("------NEWFOOD---------", id._id);
+  });
+
+  // it("Should read a record using GET", async () => {
+  //   let newFood = await mockReq.post("/food").send(foodTest);
+  //   let id = newFood.body._id;
+  //   let res = await mockReq.get(`/food/${id}`);
+  //   expect(res.status).toEqual(200);
+  //   expect(res.body.name).toEqual(foodTest.name);
+  //   expect(res.body.calories).toEqual(foodTest.calories);
   // });
 
 
