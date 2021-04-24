@@ -35,22 +35,13 @@ describe('------SERVER TESTS---------', () => {
 
 
   it('should retrieve an item from the db', async () => {
-    // let newFood = await mockRequest.post('/food').send({ name: 'burger2', calories: '500', type: 'MEAT' });
-    // let id = newFood.body;
-    const response = await mockRequest.get('/food/1');
+    let newFood = await mockRequest.post('/food').send({ name: 'burger2', calories: '500', type: 'MEAT' });
+    let id = newFood.body._id;
+    const response = await mockRequest.get(`/food/${id}`);
     expect(response.status).toBe(200);
     expect(response.body.name).toEqual(newFood.body.name);
-    console.log("------NEWFOOD---------", id._id);
+    console.log("------NEWFOOD---------", response.body.name, newFood.body.name);
   });
-
-  // it("Should read a record using GET", async () => {
-  //   let newFood = await mockReq.post("/food").send(foodTest);
-  //   let id = newFood.body._id;
-  //   let res = await mockReq.get(`/food/${id}`);
-  //   expect(res.status).toEqual(200);
-  //   expect(res.body.name).toEqual(foodTest.name);
-  //   expect(res.body.calories).toEqual(foodTest.calories);
-  // });
 
 
   // it('should retrieve all items from the db', async () => {

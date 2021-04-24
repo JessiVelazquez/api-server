@@ -21,7 +21,7 @@ async function getShoe(req, res) {
 }
 
 async function getOneShoe(req, res) {
-  const id = parseInt(req.params.id);
+  const id = req.params.id;
   let theShoe = await shoe.read(id);
   res.status(200).json(theShoe);
 }
@@ -33,14 +33,14 @@ async function createShoe(req, res) {
 }
 
 async function updateShoe(req, res) {
-  const id = parseInt(req.params.id);
+  const id = req.params.id;
   let content = req.body;
   let newShoe = await shoe.update(id, content);
   res.status(200).json(newShoe);
 }
 
 async function deleteShoe(req, res) {
-  const id = parseInt(req.params.id);
+  const id = req.params.id;
   await shoe.delete(id);
   res.status(200).send({msg: 'shoe deleted'});
 }
