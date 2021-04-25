@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "nodemon index.js",
     "test": "jest --verbose --coverage",
+    "testEnvironment": "node",
     "start": "node index.js"
   },
   "keywords": [],
