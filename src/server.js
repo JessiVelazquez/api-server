@@ -6,11 +6,11 @@ const app = express();
 
 dotenv.config();
 const mongoose = require('mongoose');
-const MONGODB_URI = process.env.MONGODB_URI;
+// const MONGODB_URI = process.env.MONGODB_URI;
 
 const options = { useNewUrlParser: true, useUnifiedTopology: true } 
 
-mongoose.connect(MONGODB_URI, options);
+mongoose.connect(process.env.MONGODB_URI, options);
 
 const logger = require('../middleware/logger.js');
 const customRoutesFood = require('../routes/custom-routes-food.js');
