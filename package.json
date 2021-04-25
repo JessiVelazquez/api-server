@@ -1,15 +1,16 @@
 {
   "name": "api-server-v2",
-  "jest": {
-    "testEnvironment": "node"
-  },
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon index.js",
-    "test": "jest --verbose --coverage",
+    "test": "jest --coverage",
     "start": "node index.js"
+  },
+  "jest": {
+    "verbose": true,
+    "testEnvironment": "node"
   },
   "keywords": [],
   "author": "",
