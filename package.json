@@ -6,17 +6,18 @@
   "scripts": {
     "dev": "nodemon index.js",
     "test": "jest --coverage --verbose",
+    "test-watch": "jest --verbose --watchAll",
     "start": "node index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JessiVelazquez/api-server"
+    "url": "git+https://github.com/JessiVelazquez/api-server.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/JessiVelazquez/api-server"
+    "url": "https://github.com/JessiVelazquez/api-server/issues"
   },
   "dependencies": {
     "@code-fellows/supergoose": "^1.1.0",
