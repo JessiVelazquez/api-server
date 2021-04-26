@@ -8,9 +8,16 @@
     "test": "jest --coverage --verbose",
     "start": "node index.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JessiVelazquez/api-server"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JessiVelazquez/api-server"
+  },
   "dependencies": {
     "@code-fellows/supergoose": "^1.1.0",
     "dotenv": "^8.2.0",
