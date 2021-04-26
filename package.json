@@ -13,6 +13,10 @@
     "type": "git",
     "url": "git+https://github.com/JessiVelazquez/api-server.git"
   },
+  "jest": {
+    "verbose": true,
+    "testEnvironment": "node"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
