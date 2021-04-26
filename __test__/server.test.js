@@ -2,12 +2,18 @@
 
 const { server } = require('../src/server.js'); // bring in your server for testing (because it is a module)
 const supertest = require('supertest'); // pull in npm package of supertest for making requests and mocking a server env
+
+const mockRequest = supertest(server); // mock the server for us
+
+const { food } = require('../routes/custom-routes-food.js');
+const { shoe } = require('../routes/custom-routes-shoe.js');
+
 // const supergoose = require('@code-fellows/supergoose');
-// const mockRequestGoose = supergoose(server);
+// const mockRequest = supergoose(server);
 
 // const { food } = require('../routes/custom-routes-food.js');
 
-const mockRequest = supertest(server); // mock the server for us
+// const mockRequest = supertest(server); // mock the server for us
 
 
 describe('------SERVER TESTS---------', () => {
