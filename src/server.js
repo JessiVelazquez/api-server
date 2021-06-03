@@ -3,6 +3,7 @@
 const dotenv = require('dotenv');
 const express = require('express');
 const app = express();
+const cors = require('cors');
 
 dotenv.config();
 const mongoose = require('mongoose');
@@ -20,6 +21,7 @@ const customRoutesToDo = require('../routes/custom-routes-todo.js');
 const notFound = require('../errors/404.js');
 const errors = require('../errors/500.js');
 
+app.use(cors());
 app.use(express.json());
 
 app.use(logger);
