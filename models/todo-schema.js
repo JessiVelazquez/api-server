@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const todoSchema = mongoose.Schema({
   complete: { type: Boolean, default: false, required: true },
   text: { type: String, required: true },
-  difficulty: { type: Number },
+  difficulty: { type: Number, default: 1 },
   assignee: { type: String, required: true },
 });
 
