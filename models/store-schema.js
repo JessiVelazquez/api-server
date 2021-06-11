@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 
 const storeSchema = mongoose.Schema({
   category: { type: String, default: '', required: true },
-  Name: { type: String, required: true },
+  name: { type: String, required: true },
   description: { type: String, default: '', required: true },
   price: { type: String, required: true },
   inventoryCount: { type: Number, required: true },
