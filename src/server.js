@@ -17,6 +17,7 @@ const logger = require('../middleware/logger.js');
 const customRoutesFood = require('../routes/custom-routes-food.js');
 const customRoutesShoe = require('../routes/custom-routes-shoe.js');
 const customRoutesToDo = require('../routes/custom-routes-todo.js');
+const customRoutesStore = require('../routes/custom-routes-store.js');
 
 const notFound = require('../errors/404.js');
 const errors = require('../errors/500.js');
@@ -28,6 +29,7 @@ app.use(logger);
 app.use(customRoutesFood);
 app.use(customRoutesShoe);
 app.use(customRoutesToDo);
+app.use(customRoutesStore);
 
 // these live at the bottom of your server
 app.use('*', notFound);
