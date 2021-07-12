@@ -42,17 +42,17 @@ describe('------SERVER TESTS---------', () => {
 
   //-----------------READ ALL TESTS----------------------\\
 
-  it('should retrieve all items from the db - food', async () => {
+  it('should retrieve all items from the db - FOOD', async () => {
     const response = await mockRequest.get('/food');
     expect(response.status).toBe(200);
   });
 
-  it('should retrieve all items from the db - todo', async () => {
+  it('should retrieve all items from the db - TODO', async () => {
     const response = await mockRequest.get('/todo');
     expect(response.status).toBe(200);
   });
 
-  it('should retrieve all items from the db - shoes', async () => {
+  it('should retrieve all items from the db - SHOES', async () => {
     const response = await mockRequest.get('/shoe');
     expect(response.status).toBe(200);
   });  
