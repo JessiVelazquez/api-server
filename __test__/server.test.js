@@ -7,13 +7,7 @@ const mockRequest = supertest(server); // mock the server for us
 
 const { food } = require('../routes/custom-routes-food.js');
 const { shoe } = require('../routes/custom-routes-shoe.js');
-
-// const supergoose = require('@code-fellows/supergoose');
-// const mockRequest = supergoose(server);
-
-// const { food } = require('../routes/custom-routes-food.js');
-
-// const mockRequest = supertest(server); // mock the server for us
+const { todo } = require('../routes/custom-routes-todo.js');
 
 
 describe('------SERVER TESTS---------', () => {
@@ -48,12 +42,17 @@ describe('------SERVER TESTS---------', () => {
 
   //-----------------READ ALL TESTS----------------------\\
 
-  it('should retrieve all items from the db', async () => {
+  it('should retrieve all items from the db - food', async () => {
     const response = await mockRequest.get('/food');
     expect(response.status).toBe(200);
   });
 
-  it('should retrieve all items from the db', async () => {
+  it('should retrieve all items from the db - todo', async () => {
+    const response = await mockRequest.get('/todo');
+    expect(response.status).toBe(200);
+  });
+
+  it('should retrieve all items from the db - shoes', async () => {
     const response = await mockRequest.get('/shoe');
     expect(response.status).toBe(200);
   });  
