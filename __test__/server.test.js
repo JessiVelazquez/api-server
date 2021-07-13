@@ -9,6 +9,8 @@ const { food } = require('../routes/custom-routes-food.js');
 const { shoe } = require('../routes/custom-routes-shoe.js');
 const { todo } = require('../routes/custom-routes-todo.js');
 
+//-----------TESTS PASS LOCAL, NOT IN GITHUB CI----------------\\
+
 
 describe('------SERVER TESTS---------', () => {
 
