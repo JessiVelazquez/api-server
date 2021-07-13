@@ -79,6 +79,7 @@ describe('------SERVER TESTS---------', () => {
 
 
   //----------------stretch - update tests------------------\\
+  //----------------these pass locally----------------------\\
 
 
   it('should show that a shoe item was updated', async () => {
