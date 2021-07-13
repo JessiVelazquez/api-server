@@ -101,6 +101,7 @@ describe('------SERVER TESTS---------', () => {
   });
 
   //----------------stretch - delete tests----------------------\\
+  //----------------these pass locally--------------------------\\
 
   it('should show that a shoe was deleted', async () => {
     let createShoe = await mockRequest.post('/shoe').send({ name: 'reebok', size: '10', type: 'W' });
