@@ -10,5 +10,7 @@ const todoSchema = mongoose.Schema({
 });
 
 const todoModel = mongoose.model('todo', todoSchema);
+console.log(`Database: ${todoModel.db}`);
+console.log(`Collection: ${todoModel.collection.name}`);
 
 module.exports = todoModel;

@@ -9,5 +9,7 @@ const foodSchema = mongoose.Schema({
 });
 
 const foodModel = mongoose.model('food', foodSchema);
+console.log(`Database: ${foodModel.db}`);
+console.log(`Collection: ${foodModel.collection.name}`);
 
 module.exports = foodModel;
