@@ -17,6 +17,7 @@ routerStore.delete('/store/:id', deleteStore);
 
 async function getStore(req, res) {
   let getAllStore = await store.read();
+  console.log('getALLSTORE', getAllStore);
   res.status(200).json(getAllStore);
 }
 

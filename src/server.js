@@ -5,13 +5,22 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 
+
 dotenv.config();
 const mongoose = require('mongoose');
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/todo';
 
-const options = { useNewUrlParser: true, useUnifiedTopology: true } 
 
-mongoose.connect(MONGODB_URI, options);
+const options = { useNewUrlParser: true, useUnifiedTopology: true, dbName: "myFirstDatabase", serverSelectionTimeoutMS: 30000 } 
+
+mongoose.connect(MONGODB_URI, options)
+  .then(() => {
+    console.log('Database connection established');
+  })
+  .catch((error) => {
+    console.log('Error connecting to database via MongoDB Atlas:', error.message);
+  });
+
 
 const logger = require('../middleware/logger.js');
 const customRoutesFood = require('../routes/custom-routes-food.js');
@@ -38,10 +47,6 @@ app.use(errors);
 module.exports = {
   server: app,
   start: port => {
-    app.listen(port, () => console.log(`server up: ${port}`));
+    app.listen(port, () => console.log(`server up at: ${port}`));
   }
 }
-
-
-
-

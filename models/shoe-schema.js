@@ -9,5 +9,7 @@ const shoeSchema = mongoose.Schema({
 });
 
 const shoeModel = mongoose.model('shoe', shoeSchema);
+console.log(`Database: ${shoeModel.db}`);
+console.log(`Collection: ${shoeModel.collection.name}`);
 
 module.exports = shoeModel;
